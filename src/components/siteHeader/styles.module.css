@@ -1,10 +1,10 @@
-﻿.header {
+.header {
     position: fixed;
     z-index: 20;
     inset: 0 0 auto;
     height: 64px;
     border-bottom: 1px solid var(--border);
-    background: rgb(241 242 237 / 92%);
+    background: rgb(238 243 242 / 92%);
     backdrop-filter: blur(14px);
 
     .headerInner {
@@ -34,7 +34,7 @@
         width: 32px;
         height: 32px;
         place-items: center;
-        border: 1px solid #badb67;
+        border: 1px solid #8ae0d0;
         border-radius: 10px;
         color: var(--accent-ink);
         background: var(--accent);
@@ -46,7 +46,7 @@
         display: flex;
         align-items: center;
         gap: 25px;
-        color: #68736b;
+        color: #687c7a;
         font-size: 11px;
         font-weight: 650;
 
@@ -70,7 +70,7 @@
         font-weight: 750;
         transition: border-color 140ms ease, box-shadow 140ms ease;
 
-        &:hover { border-color: #9db975; box-shadow: 0 0 0 3px rgb(179 223 76 / 18%); }
+        &:hover { border-color: #72bfb2; box-shadow: 0 0 0 3px rgb(87 208 187 / 18%); }
         svg { width: 14px; height: 14px; }
         .externalIcon { width: 11px; height: 11px; color: var(--muted); }
     }
