@@ -1,0 +1,91 @@
+﻿.header {
+    position: fixed;
+    z-index: 20;
+    inset: 0 0 auto;
+    height: 64px;
+    border-bottom: 1px solid var(--border);
+    background: rgb(241 242 237 / 92%);
+    backdrop-filter: blur(14px);
+
+    .headerInner {
+        display: flex;
+        width: min(1240px, calc(100% - 48px));
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 26px;
+        margin: 0 auto;
+    }
+
+    .brand {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        gap: 9px;
+        color: var(--ink);
+
+        > span:last-child { display: grid; line-height: 1.08; }
+        strong { font-size: 13px; font-weight: 780; letter-spacing: -0.03em; }
+        small { margin-top: 4px; color: var(--muted); font-size: 7px; font-weight: 800; letter-spacing: 0.12em; }
+    }
+
+    .brandMark {
+        display: grid;
+        width: 32px;
+        height: 32px;
+        place-items: center;
+        border: 1px solid #badb67;
+        border-radius: 10px;
+        color: var(--accent-ink);
+        background: var(--accent);
+
+        svg { width: 17px; height: 17px; }
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        color: #68736b;
+        font-size: 11px;
+        font-weight: 650;
+
+        a { transition: color 140ms ease; }
+        a:hover { color: var(--ink); }
+    }
+
+    .repositoryLink {
+        display: inline-flex;
+        min-height: 34px;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        padding: 0 11px;
+        border: 1px solid #ccd3ca;
+        border-radius: 7px;
+        color: var(--ink);
+        background: var(--surface);
+        font-size: 10px;
+        font-weight: 750;
+        transition: border-color 140ms ease, box-shadow 140ms ease;
+
+        &:hover { border-color: #9db975; box-shadow: 0 0 0 3px rgb(179 223 76 / 18%); }
+        svg { width: 14px; height: 14px; }
+        .externalIcon { width: 11px; height: 11px; color: var(--muted); }
+    }
+
+    @media (max-width: 680px) {
+        .headerInner { width: calc(100% - 28px); gap: 10px; }
+        .navigation { gap: 12px; font-size: 10px; }
+        .navigation a:last-child { display: none; }
+        .repositoryLink { min-height: 32px; padding: 0 8px; gap: 5px; font-size: 9px; }
+    }
+
+    @media (max-width: 410px) {
+        .brand { gap: 6px; }
+        .brandMark { width: 29px; height: 29px; }
+        .navigation { gap: 9px; }
+        .externalIcon { display: none; }
+    }
+}
