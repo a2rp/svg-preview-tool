@@ -1,0 +1,22 @@
+﻿.backToTop {
+    position: fixed;
+    z-index: 15;
+    right: max(20px, calc((100vw - 1320px) / 2));
+    bottom: 24px;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid #465248;
+    border-radius: 12px;
+    color: #f5f6f1;
+    background: #26322a;
+    box-shadow: 0 8px 22px rgb(22 32 25 / 18%);
+    transition: border-color 140ms ease, box-shadow 140ms ease;
+
+    &:hover { border-color: #b3df4c; box-shadow: 0 0 0 4px rgb(179 223 76 / 22%); }
+    &:focus-visible { outline: 3px solid #8cae3b; outline-offset: 3px; }
+    svg { width: 18px; height: 18px; }
+
+    @media (max-width: 600px) { right: 15px; bottom: 16px; width: 38px; height: 38px; }
+}
