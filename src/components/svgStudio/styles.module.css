@@ -1,0 +1,31 @@
+﻿.studio {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 28px 24px 52px;
+
+    .studioHeading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 15px; }
+    .sectionLabel { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; color: #6f8a42; font-size: 8px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .sectionLabel svg { width: 11px; height: 11px; }
+    h2 { color: #253128; font-size: clamp(19px, 2.6vw, 25px); font-weight: 780; letter-spacing: -0.05em; line-height: 1.12; }
+    .privacyNote { display: inline-flex; align-items: center; gap: 6px; padding: 6px 9px; border: 1px solid #dce3d6; border-radius: 6px; color: #677568; background: #fafbf8; font-size: 8px; font-weight: 690; white-space: nowrap; }
+    .privacyNote svg { width: 12px; height: 12px; color: #658b42; }
+    .workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .94fr); align-items: stretch; gap: 14px; }
+    .safetyNote { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 8px 10px; border: 1px solid #dce3d6; border-radius: 7px; color: #6c786e; background: #f8faf5; font-size: 8px; line-height: 1.5; }
+    .safetyNote > svg { width: 13px; height: 13px; flex: 0 0 auto; color: #658b42; }
+    .safetyNote strong { color: #3f5542; font-weight: 750; }
+    .safetyNote > span { flex: 0 0 auto; margin-left: auto; color: #7f8a7e; font-family: ui-monospace, Consolas, monospace; font-size: 7px; white-space: nowrap; }
+    .announcement { position: fixed; z-index: 30; right: 24px; bottom: 77px; max-width: min(360px, calc(100vw - 48px)); padding: 10px 13px; border: 1px solid #4a5b4b; border-radius: 8px; color: #f4f6f0; background: #26332a; box-shadow: 0 9px 25px rgb(24 36 27 / 22%); font-size: 9px; }
+
+    @media (max-width: 930px) {
+        .workspace { grid-template-columns: minmax(0, 1fr); }
+        .studio { padding-inline: 20px; }
+    }
+
+    @media (max-width: 650px) {
+        padding: 22px 14px 39px;
+        .studioHeading { align-items: flex-start; }
+        .privacyNote { gap: 4px; padding: 5px 6px; font-size: 7px; }
+        .safetyNote { align-items: flex-start; }
+        .announcement { right: 12px; bottom: 64px; max-width: calc(100vw - 24px); }
+    }
+}
