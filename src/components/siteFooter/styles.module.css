@@ -1,8 +1,8 @@
-﻿.footer {
+.footer {
     padding: 24px 24px;
-    border-top: 1px solid #dce1d9;
-    color: #778179;
-    background: #e8ebe4;
+    border-top: 1px solid #d9e3e1;
+    color: #748085;
+    background: #e6eeec;
 
     .footerInner { display: flex; max-width: 1240px; align-items: center; justify-content: space-between; gap: 28px; margin: 0 auto; }
     .credit { display: flex; align-items: center; gap: 10px; font-size: 9px; white-space: nowrap; }
