@@ -1,4 +1,4 @@
-﻿.preview {
+.preview {
     display: flex;
     min-width: 0;
     flex-direction: column;
@@ -6,44 +6,44 @@
     border: 1px solid #d6dcd3;
     border-radius: 13px;
     background: var(--surface);
-    box-shadow: 0 8px 25px rgb(30 42 35 / 5%);
+    box-shadow: 0 8px 25px rgb(30 47 49 / 5%);
 
     .previewHeading { display: flex; min-height: 71px; align-items: center; justify-content: space-between; gap: 11px; padding: 14px 16px 11px; }
     .titleGroup { display: flex; min-width: 0; align-items: center; gap: 10px; }
-    .sectionIndex { display: grid; width: 28px; height: 28px; flex: 0 0 auto; place-items: center; border: 1px solid #dce3d4; border-radius: 8px; color: #788271; background: #f4f7ee; font-family: ui-monospace, Consolas, monospace; font-size: 9px; font-weight: 700; }
-    h2 { color: #253128; font-size: 13px; font-weight: 760; letter-spacing: -0.025em; }
+    .sectionIndex { display: grid; width: 28px; height: 28px; flex: 0 0 auto; place-items: center; border: 1px solid #d9e6e2; border-radius: 8px; color: #72827d; background: #eff7f4; font-family: ui-monospace, Consolas, monospace; font-size: 9px; font-weight: 700; }
+    h2 { color: #253437; font-size: 13px; font-weight: 760; letter-spacing: -0.025em; }
     .titleGroup p { margin-top: 2px; color: #79847b; font-size: 9px; }
-    .dimensionBadge { padding: 5px 7px; border: 1px solid #dfe5da; border-radius: 5px; color: #566b51; background: #f6f8f1; font-family: ui-monospace, Consolas, monospace; font-size: 8px; font-weight: 700; white-space: nowrap; }
+    .dimensionBadge { padding: 5px 7px; border: 1px solid #dfe5da; border-radius: 5px; color: #526c69; background: #f6f8f1; font-family: ui-monospace, Consolas, monospace; font-size: 8px; font-weight: 700; white-space: nowrap; }
     .previewToolbar { display: flex; min-height: 45px; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 12px; border-block: 1px solid #e6e9e3; background: #f8f9f6; }
-    .backgroundControl { display: inline-flex; align-items: center; gap: 7px; color: #6b766e; font-size: 8px; font-weight: 700; }
-    select { max-width: 121px; height: 27px; padding: 0 23px 0 8px; border: 1px solid #dce1d9; border-radius: 6px; color: #465149; background: white; font-size: 8px; }
+    .backgroundControl { display: inline-flex; align-items: center; gap: 7px; color: #687c7a; font-size: 8px; font-weight: 700; }
+    select { max-width: 121px; height: 27px; padding: 0 23px 0 8px; border: 1px solid #d9e3e1; border-radius: 6px; color: #465f5c; background: white; font-size: 8px; }
     .zoomControls { display: inline-flex; align-items: center; gap: 4px; }
     .zoomControls button { display: inline-grid; width: 26px; height: 26px; place-items: center; border: 1px solid transparent; border-radius: 5px; color: #626e65; background: transparent; transition: border-color 140ms ease, box-shadow 140ms ease; }
-    .zoomControls button:hover:not(:disabled) { border-color: #d2d9cf; box-shadow: 0 1px 4px rgb(31 41 36 / 8%); }
+    .zoomControls button:hover:not(:disabled) { border-color: #d2d9cf; box-shadow: 0 1px 4px rgb(31 46 48 / 8%); }
     .zoomControls button:disabled { opacity: .38; }
     .zoomControls svg { width: 12px; height: 12px; }
-    .zoomControls > span { min-width: 34px; color: #526055; text-align: center; font-family: ui-monospace, Consolas, monospace; font-size: 8px; }
-    .zoomControls .fitButton { display: inline-flex; width: auto; align-items: center; gap: 4px; margin-left: 3px; padding: 0 7px; border: 1px solid #dce1d9; background: #fff; font-size: 8px; }
+    .zoomControls > span { min-width: 34px; color: #4b625f; text-align: center; font-family: ui-monospace, Consolas, monospace; font-size: 8px; }
+    .zoomControls .fitButton { display: inline-flex; width: auto; align-items: center; gap: 4px; margin-left: 3px; padding: 0 7px; border: 1px solid #d9e3e1; background: #fff; font-size: 8px; }
     .zoomControls .fitButton svg { width: 10px; height: 10px; }
     .previewCanvas { display: flex; min-height: 338px; flex: 1; align-items: center; justify-content: center; overflow: auto; padding: 22px; transition: background-color 140ms ease; }
     .checkerboard { background-color: #fbfcf9; background-image: linear-gradient(45deg, #e8ece5 25%, transparent 25%), linear-gradient(-45deg, #e8ece5 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #e8ece5 75%), linear-gradient(-45deg, transparent 75%, #e8ece5 75%); background-position: 0 0, 0 9px, 9px -9px, -9px 0; background-size: 18px 18px; }
     .white { background: #fff; }
-    .graphite { background: #242c27; }
-    .artwork { display: flex; min-width: 25%; max-width: none; flex: 0 0 auto; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgb(22 32 25 / 13%); background: white; box-shadow: 0 13px 28px rgb(25 36 28 / 16%); }
+    .graphite { background: #253237; }
+    .artwork { display: flex; min-width: 25%; max-width: none; flex: 0 0 auto; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgb(22 42 43 / 13%); background: white; box-shadow: 0 13px 28px rgb(25 45 46 / 16%); }
     .artwork img { display: block; width: 100%; max-width: none; height: auto; object-fit: contain; }
     .emptyPreview { display: grid; max-width: 210px; justify-items: center; gap: 7px; color: #758077; text-align: center; }
-    .emptyIcon { display: grid; width: 43px; height: 43px; place-items: center; margin-bottom: 4px; border: 1px solid #cdd7c9; border-radius: 12px; color: #627457; background: rgb(255 255 255 / 80%); font-family: ui-monospace, Consolas, monospace; font-size: 13px; font-weight: 800; }
-    .emptyPreview strong { color: #445147; font-size: 10px; font-weight: 750; }
+    .emptyIcon { display: grid; width: 43px; height: 43px; place-items: center; margin-bottom: 4px; border: 1px solid #cdd7c9; border-radius: 12px; color: #4c7972; background: rgb(255 255 255 / 80%); font-family: ui-monospace, Consolas, monospace; font-size: 13px; font-weight: 800; }
+    .emptyPreview strong { color: #435f5b; font-size: 10px; font-weight: 750; }
     .emptyPreview p { font-size: 8px; line-height: 1.6; }
     .previewDetails { display: flex; min-height: 51px; align-items: center; justify-content: space-between; gap: 9px; padding: 7px 12px; border-top: 1px solid #e5e9e2; background: #fff; }
     .previewDetails > div:first-child { display: grid; gap: 3px; overflow: hidden; }
     .previewDetails > div:first-child span { color: #879187; font-size: 7px; font-weight: 750; letter-spacing: .1em; }
     .previewDetails code { max-width: 230px; overflow: hidden; color: #4f5d51; font-family: ui-monospace, Consolas, monospace; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }
     .exportActions { display: flex; flex: 0 0 auto; gap: 5px; }
-    .secondaryButton, .primaryButton { display: inline-flex; min-height: 30px; align-items: center; justify-content: center; gap: 5px; padding: 0 9px; border: 1px solid #dce1d9; border-radius: 6px; color: #526055; background: #fff; font-size: 8px; font-weight: 740; transition: border-color 140ms ease, box-shadow 140ms ease; }
-    .secondaryButton:hover:not(:disabled) { border-color: #9eae96; box-shadow: 0 0 0 3px rgb(103 134 93 / 10%); }
-    .primaryButton { border-color: #b3df4c; color: #293a17; background: #c4eb70; }
-    .primaryButton:hover:not(:disabled) { border-color: #99c139; box-shadow: 0 0 0 3px rgb(179 223 76 / 20%); }
+    .secondaryButton, .primaryButton { display: inline-flex; min-height: 30px; align-items: center; justify-content: center; gap: 5px; padding: 0 9px; border: 1px solid #d9e3e1; border-radius: 6px; color: #4b625f; background: #fff; font-size: 8px; font-weight: 740; transition: border-color 140ms ease, box-shadow 140ms ease; }
+    .secondaryButton:hover:not(:disabled) { border-color: #9eae96; box-shadow: 0 0 0 3px rgb(68 133 127 / 10%); }
+    .primaryButton { border-color: #57d0bb; color: #1b4440; background: #a5e8dc; }
+    .primaryButton:hover:not(:disabled) { border-color: #4aac9b; box-shadow: 0 0 0 3px rgb(87 208 187 / 20%); }
     .secondaryButton:disabled, .primaryButton:disabled { opacity: .45; }
     .exportActions svg { width: 11px; height: 11px; }
 
