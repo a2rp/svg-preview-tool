@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiCheck, FiChevronDown, FiClipboard, FiFilePlus, FiUpload } from "react-icons/fi";
 import { formatFileSize, maxSvgBytes } from "../../utils/svgTools.js";
 import styles from "./styles.module.css";
@@ -91,7 +91,7 @@ const SvgEditor = ({ source, onSourceChange, byteCount, validation, samples, onC
                 <p id="editor-help">{formatFileSize(byteCount)} <span /> {source ? "UTF-8 source" : "Waiting for markup"}</p>
                 <p>{validation.ok ? <><FiCheck aria-hidden="true" /> XML parsed</> : "Up to 1 MB"}</p>
             </div>
-            <p className={styles.editorMessage} id="editor-error" role="status">{message || (!validation.ok ? validation.error : "")}</p>
+            <p className={styles.editorMessage} id="editor-error" role={message ? undefined : !validation.ok && validation.error !== "Checking SVG markup..." ? "alert" : undefined}>{message || (!validation.ok ? validation.error : "")}</p>
         </section>
     );
 };
