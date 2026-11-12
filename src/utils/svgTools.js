@@ -55,7 +55,19 @@ export const formatFileSize = (byteLength) => {
     return `${kilobytes < 10 ? kilobytes.toFixed(1) : Math.round(kilobytes)} KB`;
 };
 
-const sanitizeCss = (css) => String(css)
+const decodeCssEscapes = (css) => String(css)
+    .replace(/\/\*[\s\S]*?\*\//g, " ")
+    .replace(/\\([0-9a-f]{1,6})\s?|\\([^\r\n\f])|\\(?:\r\n|[\r\n\f])/gi, (match, hex, escaped) => {
+        if (hex) {
+            const codePoint = Number.parseInt(hex, 16);
+            return codePoint > 0 && codePoint <= 0x10ffff
+                ? String.fromCodePoint(codePoint)
+                : "\uFFFD";
+        }
+        return escaped ?? match;
+    });
+
+const sanitizeCss = (css) => decodeCssEscapes(css)
     .replace(/@import\s+[^;]+;?/gi, "")
     .replace(/url\(\s*(?:(['"])(.*?)\1|([^)]*?))\s*\)/gi, (_match, _quote, quoted, plain) => {
         const target = String(quoted ?? plain ?? "").trim();
@@ -78,7 +90,7 @@ export const prepareSvgPreview = (source, Parser = globalThis.DOMParser, Seriali
         if (!root || root.localName?.toLowerCase() !== "svg") return { ok: false, error: "The document root must be an SVG element." };
 
         let removedCount = 0;
-        document.querySelectorAll("script, foreignObject, iframe, object, embed, audio, video, link").forEach((element) => {
+        document.querySelectorAll("script, foreignObject, iframe, object, embed, audio, video, link, animate, animateMotion, animateTransform, set").forEach((element) => {
             element.remove();
             removedCount += 1;
         });
@@ -87,7 +99,7 @@ export const prepareSvgPreview = (source, Parser = globalThis.DOMParser, Seriali
             Array.from(element.attributes).forEach((attribute) => {
                 const name = attribute.name.toLowerCase();
                 const value = attribute.value.trim();
-                if (name.startsWith("on") || name === "src" || /javascript\s*:/i.test(value)) {
+                if (name.startsWith("on") || name === "src" || name === "xml:base" || /javascript\s*:/i.test(value)) {
                     element.removeAttribute(attribute.name);
                     removedCount += 1;
                     return;
@@ -99,8 +111,9 @@ export const prepareSvgPreview = (source, Parser = globalThis.DOMParser, Seriali
                     }
                     return;
                 }
-                if (name === "style" || /url\s*\(/i.test(value)) {
-                    const cleanedValue = name === "style" ? sanitizeCss(value) : value.replace(/url\(\s*[^#][^)]*\)/gi, "none");
+                const normalizedValue = decodeCssEscapes(value);
+                if (name === "style" || /url\s*\(/i.test(normalizedValue)) {
+                    const cleanedValue = sanitizeCss(value);
                     if (cleanedValue !== value) removedCount += 1;
                     element.setAttribute(attribute.name, cleanedValue);
                 }
